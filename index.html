@@ -1,248 +1,314 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coronado High School Class of 2007 - 20 Year Reunion</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Verdana', Arial, Helvetica, sans-serif;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #ffffff;
-        }
-        
-        header {
-            background: linear-gradient(to right, #990000, #cc0000);
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-        }
-        
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .tagline {
-            font-size: 1.5em;
-            font-weight: normal;
-            opacity: 0.9;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .hero {
-            background: rgba(153, 0, 0, 0.1);
-            border: 2px solid #990000;
-            border-radius: 10px;
-            padding: 40px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .hero h2 {
-            font-size: 2.5em;
-            color: #cc0000;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.2em;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(153,0,0,0.3);
-            border-radius: 10px;
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: #990000;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(153,0,0,0.3);
-        }
-        
-        .card h3 {
-            color: #cc0000;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-        }
-        
-        .card p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: #990000;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-        
-        .btn:hover {
-            background: #cc0000;
-            transform: scale(1.05);
-        }
-        
-        footer {
-            background: #1a1a1a;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-            border-top: 2px solid #990000;
-        }
-        
-        .archive-link {
-            display: inline-block;
-            margin: 20px 10px;
-            padding: 15px 25px;
-            background: rgba(153,0,0,0.2);
-            border: 1px solid #990000;
-            border-radius: 5px;
-            color: #ffffff;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .archive-link:hover {
-            background: rgba(153,0,0,0.4);
-            transform: translateY(-3px);
-        }
-        
-        .year-badge {
-            background: #990000;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            margin-right: 10px;
-        }
-    </style>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Coronado High School - Class of 2007 Reunion</title>
+<style>
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+a:link { color: #990000; text-decoration: underline; }
+a:visited { color: #990000; }
+a:hover { color: #CC0000; }
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #990000;
+    font-family: Verdana;
+}
+.contact-info {
+    font-size: 10px;
+    font-weight: bold;
+    font-family: Verdana;
+}
+.nav-link {
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    padding: 4px;
+}
+.content-text {
+    font-size: 12px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.section-header {
+    font-size: 14px;
+    font-weight: bold;
+    color: #990000;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.gold-bg {
+    background-color: #FFD700;
+}
+.red-bg {
+    background-color: #990000;
+}
+.white-text {
+    color: #FFFFFF;
+}
+</style>
+
+<script type="text/javascript">
+// Important Dates Scroller
+var reunionDates = new Array();
+reunionDates[0] = '20 Year Reunion - Summer 2027';
+reunionDates[1] = 'Graduation Day - May 22, 2007';
+reunionDates[2] = 'Class of 2007 - Coronado Cougars';
+reunionDates[3] = 'Forever Go Cougars!';
+
+var currentDate = 0;
+function scrollDates() {
+    if (document.getElementById('dateScroller')) {
+        document.getElementById('dateScroller').innerHTML = reunionDates[currentDate];
+        currentDate = (currentDate + 1) % reunionDates.length;
+        setTimeout(scrollDates, 3000);
+    }
+}
+window.onload = scrollDates;
+</script>
 </head>
+
 <body>
-    <header>
-        <h1>🐾 CORONADO COUGARS 🐾</h1>
-        <p class="tagline">Class of 2007 - Twenty Year Reunion</p>
-    </header>
+
+<!-- Top Banner -->
+<table width="800" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bgcolor="#990000" height="30" align="center">
+      <font color="#FFFFFF" face="Verdana" size="2"><b>
+      CORONADO COUGARS - CLASS OF 2007 - 20 YEAR REUNION
+      </b></font>
+    </td>
+  </tr>
+</table>
+
+<!-- Header Section -->
+<table width="800" border="0" align="center" cellpadding="10" cellspacing="0" bgcolor="#FFD700">
+  <tr>
+    <td align="center">
+      <span class="header-title">🐾 CORONADO HIGH SCHOOL 🐾</span><br>
+      <span class="contact-info">
+        Class of 2007 - Twenty Year Reunion<br>
+        1590 W. Fillmore Street, Colorado Springs, CO 80904
+      </span>
+    </td>
+  </tr>
+</table>
+
+<!-- Main Content Table -->
+<table width="800" border="1" align="center" cellpadding="0" cellspacing="0" bordercolor="#990000">
+  <tr>
+    <!-- Left Navigation -->
+    <td width="185" valign="top" bgcolor="#F5F5F5">
+      <table width="100%" border="0" cellpadding="5" cellspacing="0">
+        <tr bgcolor="#990000">
+          <td class="white-text" align="center"><b>NAVIGATION</b></td>
+        </tr>
+        <tr><td class="nav-link"><a href="#home">• Home</a></td></tr>
+        <tr><td class="nav-link"><a href="#reunion">• Reunion Info</a></td></tr>
+        <tr><td class="nav-link"><a href="#memories">• Class Memories</a></td></tr>
+        <tr><td class="nav-link"><a href="#classmates">• Find Classmates</a></td></tr>
+        <tr><td class="nav-link"><a href="#photos">• Photo Gallery</a></td></tr>
+        <tr><td class="nav-link"><a href="#archives">• Website Archives</a></td></tr>
+        <tr><td class="nav-link"><a href="#history">• Our History</a></td></tr>
+        <tr><td class="nav-link"><a href="#contact">• Contact Us</a></td></tr>
+        
+        <tr bgcolor="#990000">
+          <td class="white-text" align="center" height="10"></td>
+        </tr>
+        
+        <tr bgcolor="#FFD700">
+          <td align="center" class="content-text">
+            <b>Important Dates</b>
+          </td>
+        </tr>
+        <tr>
+          <td align="center" class="content-text" style="padding: 15px;" id="dateScroller">
+            Loading...
+          </td>
+        </tr>
+        
+        <tr bgcolor="#990000">
+          <td class="white-text" align="center" height="10"></td>
+        </tr>
+        
+        <tr bgcolor="#FFD700">
+          <td align="center" class="content-text">
+            <b>Quick Links</b>
+          </td>
+        </tr>
+        <tr><td class="nav-link" style="font-size: 10px;">
+          <a href="https://web.archive.org/web/20070906073604/http://www.cssd11.k12.co.us/coronado/" target="_blank">Original Site (2007)</a>
+        </td></tr>
+        <tr><td class="nav-link" style="font-size: 10px;">
+          <a href="https://web.archive.org/web/20070224071122/http://www.cssd11.k12.co.us/coronado/" target="_blank">Senior Year Spring</a>
+        </td></tr>
+      </table>
+    </td>
     
-    <div class="container">
-        <div class="hero">
-            <h2>Welcome Back, Cougars!</h2>
-            <p>It's been 20 years since we walked the halls of Coronado High School.</p>
-            <p>Join us as we celebrate two decades of memories, achievements, and friendships.</p>
-            <p><strong>📅 Reunion Details Coming Soon</strong></p>
-        </div>
+    <!-- Main Content Area -->
+    <td width="615" valign="top">
+      <table width="100%" border="0" cellpadding="15" cellspacing="0">
         
-        <div class="grid">
-            <div class="card">
-                <h3>📚 Our History</h3>
-                <p>Relive the glory days! Browse archived snapshots of our school website from 2003-2007.</p>
-                <p>See the events, sports, and moments that defined our high school years.</p>
-                <a href="#archives" class="btn">View Archives</a>
-            </div>
-            
-            <div class="card">
-                <h3>📸 Photo Gallery</h3>
-                <p>Share your favorite memories from senior year, prom, graduation, and everything in between.</p>
-                <p>Upload your photos and see what your classmates have been up to.</p>
-                <a href="#" class="btn">Coming Soon</a>
-            </div>
-            
-            <div class="card">
-                <h3>🎓 Where Are They Now?</h3>
-                <p>Catch up with your classmates! See what everyone has been up to over the past 20 years.</p>
-                <p>Update your profile and reconnect with old friends.</p>
-                <a href="#" class="btn">Coming Soon</a>
-            </div>
-            
-            <div class="card">
-                <h3>🎉 Reunion Event</h3>
-                <p>Mark your calendars! Details about our 20-year reunion celebration will be posted here.</p>
-                <p>Stay tuned for date, location, and RSVP information.</p>
-                <a href="#" class="btn">More Info Soon</a>
-            </div>
-        </div>
-        
-        <div id="archives" style="margin-top: 60px;">
-            <h2 style="color: #cc0000; font-size: 2.5em; margin-bottom: 30px; text-align: center;">
-                📜 Archived School Websites
-            </h2>
-            <p style="text-align: center; font-size: 1.2em; margin-bottom: 40px;">
-                Step back in time! These are snapshots of our school's website during our time there.
+        <!-- Welcome Section -->
+        <tr>
+          <td>
+            <a name="home"></a>
+            <span class="section-header">WELCOME BACK, COUGARS!</span>
+            <hr color="#990000">
+            <p class="content-text">
+              It's been 20 years since we walked the halls of Coronado High School. 
+              This website serves as a gathering place for our class reunion celebration.
             </p>
-            
-            <div style="text-align: center;">
-                <a href="https://web.archive.org/web/20070906073604/http://www.cssd11.k12.co.us/coronado/" class="archive-link" target="_blank">
-                    <span class="year-badge">Sep 2007</span>
-                    Senior Year Fall Semester
-                </a>
-                
-                <a href="https://web.archive.org/web/20070224071122/http://www.cssd11.k12.co.us/coronado/" class="archive-link" target="_blank">
-                    <span class="year-badge">Feb 2007</span>
-                    Senior Year Spring Semester
-                </a>
-                
-                <a href="https://web.archive.org/web/20060813145846/http://www.cssd11.k12.co.us/coronado/" class="archive-link" target="_blank">
-                    <span class="year-badge">Aug 2006</span>
-                    Senior Year Begins
-                </a>
-                
-                <a href="https://web.archive.org/web/20060505033144/http://www.cssd11.k12.co.us/coronado/" class="archive-link" target="_blank">
-                    <span class="year-badge">May 2006</span>
-                    End of Junior Year
-                </a>
-                
-                <a href="https://web.archive.org/web/20050422014024/http://www.cssd11.k12.co.us/CORONADO/" class="archive-link" target="_blank">
-                    <span class="year-badge">Apr 2005</span>
-                    Sophomore Year
-                </a>
-                
-                <a href="https://web.archive.org/web/20041018012043/http://www.cssd11.k12.co.us/Coronado/" class="archive-link" target="_blank">
-                    <span class="year-badge">Oct 2004</span>
-                    Freshman Year
-                </a>
-            </div>
-        </div>
-    </div>
-    
-    <footer>
-        <p style="font-size: 1.2em; margin-bottom: 15px;">
-            <strong>Coronado High School - Class of 2007</strong>
-        </p>
-        <p style="opacity: 0.7;">
-            Colorado Springs, Colorado
-        </p>
-        <p style="margin-top: 20px; opacity: 0.6; font-size: 0.9em;">
-            Website created for the 20-year reunion | Archived content courtesy of the Internet Archive
-        </p>
-    </footer>
+            <p class="content-text">
+              <b>Class Motto:</b> "Forever Go Cougars!"<br>
+              <b>School Colors:</b> Scarlet and Gold<br>
+              <b>Graduation Date:</b> May 22, 2007 at World Arena (9:00 AM)
+            </p>
+          </td>
+        </tr>
+        
+        <!-- Reunion Info -->
+        <tr bgcolor="#FFFACD">
+          <td>
+            <a name="reunion"></a>
+            <span class="section-header">📅 REUNION INFORMATION</span>
+            <hr color="#990000">
+            <p class="content-text">
+              <b>Details coming soon for our 20 year reunion!</b>
+            </p>
+            <p class="content-text">
+              Watch this space for:
+              <ul class="content-text">
+                <li>Date and time</li>
+                <li>Venue location</li>
+                <li>Ticket pricing</li>
+                <li>RSVP information</li>
+                <li>Hotel recommendations</li>
+              </ul>
+            </p>
+          </td>
+        </tr>
+        
+        <!-- Archives Section -->
+        <tr>
+          <td>
+            <a name="archives"></a>
+            <span class="section-header">🕰️ ARCHIVED SCHOOL WEBSITES</span>
+            <hr color="#990000">
+            <p class="content-text">
+              Step back in time! These are snapshots of Coronado's website during our time there,
+              preserved by the Internet Archive's Wayback Machine.
+            </p>
+            <table width="100%" border="1" cellpadding="8" cellspacing="0" bordercolor="#990000" class="content-text">
+              <tr bgcolor="#FFD700">
+                <td><b>Date</b></td>
+                <td><b>School Year</b></td>
+                <td><b>Link</b></td>
+              </tr>
+              <tr>
+                <td>Sep 2007</td>
+                <td>Senior Year - Fall</td>
+                <td><a href="https://web.archive.org/web/20070906073604/http://www.cssd11.k12.co.us/coronado/" target="_blank">View Archive</a></td>
+              </tr>
+              <tr bgcolor="#F5F5F5">
+                <td>Feb 2007</td>
+                <td>Senior Year - Spring</td>
+                <td><a href="https://web.archive.org/web/20070224071122/http://www.cssd11.k12.co.us/coronado/" target="_blank">View Archive</a></td>
+              </tr>
+              <tr>
+                <td>Aug 2006</td>
+                <td>Senior Year Begins</td>
+                <td><a href="https://web.archive.org/web/20060813145846/http://www.cssd11.k12.co.us/coronado/" target="_blank">View Archive</a></td>
+              </tr>
+              <tr bgcolor="#F5F5F5">
+                <td>May 2006</td>
+                <td>Junior Year - End</td>
+                <td><a href="https://web.archive.org/web/20060505033144/http://www.cssd11.k12.co.us/coronado/" target="_blank">View Archive</a></td>
+              </tr>
+              <tr>
+                <td>Apr 2005</td>
+                <td>Sophomore Year</td>
+                <td><a href="https://web.archive.org/web/20050422014024/http://www.cssd11.k12.co.us/CORONADO/" target="_blank">View Archive</a></td>
+              </tr>
+              <tr bgcolor="#F5F5F5">
+                <td>Oct 2004</td>
+                <td>Freshman Year</td>
+                <td><a href="https://web.archive.org/web/20041018012043/http://www.cssd11.k12.co.us/Coronado/" target="_blank">View Archive</a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        
+        <!-- School History -->
+        <tr>
+          <td>
+            <a name="history"></a>
+            <span class="section-header">📚 CORONADO HISTORY</span>
+            <hr color="#990000">
+            <p class="content-text">
+              <b>Why Scarlet and Gold?</b><br>
+              When Coronado was founded, two junior high schools fed into it: Holmes and West. 
+              The gold was selected from both schools, representing a new beginning and unification. 
+              The scarlet was chosen for the red of Colorado and the influence of 
+              Francisco Vásquez de Coronado.
+            </p>
+            <p class="content-text">
+              <b>The Cougar Mascot</b><br>
+              The early days emphasized Spanish influence, but the cougar was chosen over 
+              "the Don" (a Spanish nobleman) as our mascot. The yearbook was named 
+              <i>Recuerdos</i> and the newspaper was <i>The Writ of the Conqueror</i>.
+            </p>
+          </td>
+        </tr>
+        
+        <!-- Coming Soon Sections -->
+        <tr bgcolor="#FFFACD">
+          <td>
+            <a name="photos"></a>
+            <span class="section-header">📸 PHOTO GALLERY</span>
+            <hr color="#990000">
+            <p class="content-text">
+              <b>Coming Soon:</b> Share your photos from prom, graduation, sports, clubs, 
+              and everyday moments from our time at Coronado!
+            </p>
+          </td>
+        </tr>
+        
+        <tr>
+          <td>
+            <a name="classmates"></a>
+            <span class="section-header">🎓 WHERE ARE THEY NOW?</span>
+            <hr color="#990000">
+            <p class="content-text">
+              <b>Coming Soon:</b> Reconnect with classmates and see what everyone has been 
+              up to over the past 20 years.
+            </p>
+          </td>
+        </tr>
+        
+      </table>
+    </td>
+  </tr>
+</table>
+
+<!-- Footer -->
+<table width="800" border="0" align="center" cellpadding="10" cellspacing="0" bgcolor="#990000">
+  <tr>
+    <td align="center">
+      <font color="#FFFFFF" face="Verdana" size="2">
+        <b>Coronado High School - Class of 2007</b><br>
+        <font size="1">Colorado Springs, Colorado<br>
+        Website created March 2026 for our 20-year reunion<br>
+        Forever Go Cougars! 🐾</font>
+      </font>
+    </td>
+  </tr>
+</table>
+
+<br><br>
+
 </body>
 </html>
